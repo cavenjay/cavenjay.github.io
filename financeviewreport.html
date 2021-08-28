@@ -1,0 +1,21 @@
+<html>
+<head>
+<title></title>
+</head>
+<body >
+
+<?Php
+require "conn.php";
+
+////////Query & Data Display is here/////////
+
+$q="select * from transaction where manager_id='1' order  by  id ";
+echo "<table>";
+foreach ($dbo->query($sql) as $nt) {
+echo "<tr><td><a href=financeviewreport.php?id=$nt[id]>$nt[trans_id]</a></td><td>$nt[trans_datetime]</td></tr>";
+}
+echo "</table>";
+/////////////////////////////////////
+?>
+</body>
+</html>
